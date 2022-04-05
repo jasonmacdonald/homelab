@@ -3,4 +3,4 @@ nfs-client-provisioner:
     defaultClass: true
   nfs:
     server: 192.168.2.30
-    path: /tank/k8s
+    path: /proxmox
