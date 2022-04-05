@@ -2,12 +2,15 @@
 
 env ?= "prod"
 
-default: boot cluster
+default: servers cluster
 
-~/.ssh/id_ed25519:
-	ssh-keygen -t ed25519 -f "$@"
+~/.ssh/id_rsa:
+	ssh-keygen -t rsa -f "$@"
 
-boot: ~/.ssh/id_ed25519
+servers: 
+	make -C terraform
+
+boot: ~/.ssh/id_rsa
 	ansible-playbook \
 		--inventory inventories/${env}.yml \
 		boot.yml

@@ -1,0 +1,50 @@
+- name: Bootstrap external secrets
+  hosts: localhost
+  vars_prompt:
+    - name: tamplate_vm_name
+      prompt: Name of the VM temaple to clone
+      default: "ubuntu-focal-cloudinit-template"
+      private: false
+    - name: pm_host
+      prompt: IP or Hostname of Proxmox server
+      default: 192.168.2.25
+      private: false
+    - name: pm_gateway
+      prompt: IP of the gateway
+      default: 192.168.2.1
+      private: false
+    - name: pm_password
+      prompt: Enter Proxmox password
+    - name: pm_node
+      prompt: Enter the node to install the VMs on
+      default: "pve"
+      private: false
+    - name: pm_master_mem
+      prompt: Enter memory (GB) for master nodes
+      default: "4"
+      private: false
+    - name: pm_master_cpu
+      prompt: Enter number of cores for master
+      default: "4"
+      private: false
+    - name: pm_node_cpu
+      prompt: Enter number of cores for workers
+      default: "4"
+      private: false
+    - name: pm_node_mem
+      prompt: Enter memory (GB) for worker nodes
+      default: "4"
+      private: false
+    - name: pvt_key
+      prompt: SSH key path (~/.ssh/idrsa)
+      default: "~/.ssh/idrsa"
+      private: false
+  tasks:
+    - name: Render environment file
+      template:
+        src: ./terraform.tfvars.j2
+        dest: ./terraform.auto.tfvars
+    - name: Copy the inventory file
+      ansible.builtin.copy:
+        src: ../inventories/prod.yml
+        dest: ./hosts.yml

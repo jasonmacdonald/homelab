@@ -1,0 +1,29 @@
+---
+- name: Update and upgrade apt packages
+  become: true
+  apt:
+    upgrade: yes
+    update_cache: yes
+    cache_valid_time: 86400 #One day
+- name: Enable IPv4 forwarding
+  sysctl:
+    name: net.ipv4.ip_forward
+    value: "1"
+    state: present
+    reload: true
+- name: Enable IPv6 forwarding
+  sysctl:
+    name: net.ipv6.conf.all.forwarding
+    value: "1"
+    state: present
+    reload: true
+- name: fix dns servers in resolv.conf
+  template:
+    src: resolv.conf.j2
+    dest: /etc/resolv.conf
+  when:
+    - dns_servers | length() > 0
+- name: install nfs-common on the servers
+  package:
+    name: nfs-common
+    state: present
