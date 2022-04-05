@@ -1,7 +1,7 @@
 .POSIX:
 .EXPORT_ALL_VARIABLES:
 
-KUBECONFIG = $(shell pwd)/../metal/kubeconfig.yaml
+KUBECONFIG = $(shell pwd)/../../metal/kubeconfig.yaml
 
 default: namespace argocd root
 

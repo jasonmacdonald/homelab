@@ -14,7 +14,7 @@ metal:
 
 .PHONY: bootstrap
 bootstrap:
-	make -C bootstrap
+	make -C apps/bootstrap
 
 .PHONY: external
 external:
