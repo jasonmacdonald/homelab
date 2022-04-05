@@ -5,7 +5,7 @@ k3s_service_file: /etc/systemd/system/k3s.service
 k3s_server_config:
   disable:
     - local-storage
-    - servicelb
+    # - servicelb
     - traefik
   disable-cloud-controller: true
   secrets-encryption: true
