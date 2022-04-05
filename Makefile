@@ -27,3 +27,6 @@ wait:
 tools:
 	make -C tools
 
+.PHONY: destroy
+destroy:
+	make -C metal destroy

@@ -18,3 +18,6 @@ cluster:
 console:
 	ansible-console \
 		--inventory inventories/${env}.yml
+
+destroy:
+	make -C terraform destroy
