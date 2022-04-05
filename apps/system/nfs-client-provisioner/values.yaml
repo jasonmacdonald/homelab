@@ -1,6 +1,0 @@
-nfs-client-provisioner:
-  storageClass:
-    defaultClass: true
-  nfs:
-    server: 192.168.2.30
-    path: /proxmox
