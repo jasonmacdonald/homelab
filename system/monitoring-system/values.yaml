@@ -7,7 +7,7 @@ kube-prometheus-stack:
       annotations:
         cert-manager.io/cluster-issuer: letsencrypt-prod
       hosts:
-        - &host grafana.allairis.com
+        - &host grafana.local
       tls:
         - secretName: grafana-general-tls
           hosts:

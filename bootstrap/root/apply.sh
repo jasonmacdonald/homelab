@@ -1,6 +1,6 @@
 #!/bin/sh
 
-curl -fks --connect-timeout 5 https://git.allairis.com \
+curl -fks --connect-timeout 5 https://git.local \
     || extra_args="--values values-seed.yaml"
 
 helm template \

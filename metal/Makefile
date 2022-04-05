@@ -10,11 +10,6 @@ default: servers cluster
 servers: 
 	make -C terraform
 
-boot: ~/.ssh/id_rsa
-	ansible-playbook \
-		--inventory inventories/${env}.yml \
-		boot.yml
-
 cluster:
 	ansible-playbook \
 		--inventory inventories/${env}.yml \
