@@ -1,8 +1,8 @@
 .POSIX:
 
-default: metal bootstrap wait
+default: metal bootstrap 
 
-all: metal bootstrap external wait
+all: metal bootstrap external 
 
 configure:
 	./scripts/configure
@@ -27,10 +27,3 @@ wait:
 tools:
 	make -C tools
 
-.PHONY: docs
-docs:
-	make -C docs
-
-dev:
-	make -C metal cluster env=dev
-	make -C bootstrap
