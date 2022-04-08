@@ -6,6 +6,6 @@ k3s_server_config:
   disable:
     - local-storage
     # - servicelb
-    # - traefik
+    - traefik
   disable-cloud-controller: true
   secrets-encryption: true

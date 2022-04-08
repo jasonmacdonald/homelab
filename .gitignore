@@ -7,5 +7,4 @@ book/
 *.tgz
 *kubeconfig.yaml
 Chart.lock
-apps/system/nfs-client-provisioner
-apps/system/traefik
+backup
