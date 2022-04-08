@@ -1,7 +1,0 @@
-vault:
-  server:
-    dataStorage:
-      enabled: true
-  ui:
-    enabled: true
-    serviceType: "ClusterIP"
