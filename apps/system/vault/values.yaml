@@ -1,0 +1,4 @@
+vault:
+  ui:
+    enabled: true
+    serviceType: "ClusterIP"
