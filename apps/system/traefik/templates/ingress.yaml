@@ -16,6 +16,5 @@ spec:
       services:
         - kind: TraefikService
           name: dashboard@internal
-    - kind: Rule
   tls:
     certResolver: default
