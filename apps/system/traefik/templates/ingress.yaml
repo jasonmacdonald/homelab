@@ -15,6 +15,6 @@ spec:
       priority: 10
       services:
         - kind: TraefikService
-          name: dashboard@internal
+          name: api@internal
   tls:
     certResolver: default
